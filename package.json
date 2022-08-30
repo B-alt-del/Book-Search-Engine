@@ -9,5 +9,9 @@
     "build": "concurrently \"cd ./client && npm install && npm run build\" \"cd ./server && npm install\""
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server-express": "^3.10.1",
+    "concurrently": "^7.3.0"
+  }
 }
