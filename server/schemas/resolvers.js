@@ -8,7 +8,7 @@ const resolvers = {
     async getUser(_, args, context) {
 
       if(context.user) {
-        const userData = await User.findOne({})
+        const userData = await User.findOne({email: args.email})
         .select('-__v -password')
         .populate('savedBooks')
     
