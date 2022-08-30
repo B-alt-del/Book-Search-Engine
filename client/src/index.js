@@ -22,7 +22,7 @@ const client = new ApolloClient({
     })
   },
   uri: '/graphql',
-  cache: InMemoryCache, 
+  cache: new InMemoryCache(), 
 
 });
 
