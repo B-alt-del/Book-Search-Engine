@@ -1,6 +1,6 @@
 import gql from 'graphql-tag';
 
-export const FIND_USER = gql`
+export const QUERIES = gql`
 {
     getUser {
       _id
