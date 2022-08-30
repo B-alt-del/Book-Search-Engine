@@ -1,8 +1,8 @@
 import gql from 'graphql-tag';
 
 export const QUERIES = gql`
-{
-    getUser {
+
+    query getUser {
       _id
       username
       email
@@ -17,5 +17,5 @@ export const QUERIES = gql`
         description
       }
     }
-  }
+  
 `;
