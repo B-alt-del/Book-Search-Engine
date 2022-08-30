@@ -20,7 +20,7 @@ async function startServer(typeDefs, resolvers) {
   const server = new ApolloServer({
     typeDefs,
     resolvers,
-    // context: authMiddleware   //not in class example
+    context: authMiddleware   //not in class example
   });
 
   await server.start();
