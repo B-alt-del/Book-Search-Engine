@@ -32,11 +32,11 @@ const resolvers = {
       return {token, user};
     },
 
-    async login(_, {email, username, password}) {
-      const user = await User.findOne({$or: [{ email: email}, { username: username }]});
+    async login(_, {email, password}) {
+      const user = await User.findOne({email: email});
       const check_password = await user.isCorrectPassword(password);
       if(!user || !check_password) {
-        throw new AuthenticationError('email/username and/or password is incorrect');
+        throw new AuthenticationError('email and/or password is incorrect');
       }
       const token = signToken(user);
       return {token, user};

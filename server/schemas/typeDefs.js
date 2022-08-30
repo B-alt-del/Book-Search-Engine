@@ -44,13 +44,13 @@ const typeDefs = gql`
     addUser(email: String!, username: String! password: String!): User #Auth
 
     # #login -> sign token and send it back
-    login(email: String, username: String, password: String!): User #Auth
+    login(email: String, password: String!): User #Auth
 
     # #save a book to user's savedBooks
     addBook(input: savedBook!): User  #saveBook
 
     # #remove a book from savedBooks
-    removeBook(userId: ID, _id: ID!): User  
+    removeBook(_id: ID!): User  
   }
 
 `;

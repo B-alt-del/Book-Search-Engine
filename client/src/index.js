@@ -1,11 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import App from './App';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ApolloProvider } from '@apollo/react-hooks';  //added
-import ApolloClient from 'apollo-boost';               //added
+import { BrowserRouter as Router} from 'react-router-dom';
+
+
+import { ApolloClient, InMemoryCache, ApolloProvider} from '@apollo/client';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
 
 const client = new ApolloClient({
   request: operation => {
@@ -17,7 +21,9 @@ const client = new ApolloClient({
       }
     })
   },
-  uri: '/graphql'
+  uri: '/graphql',
+  cache: new InMemoryCache(),
+
 });
 
 root.render(
@@ -29,5 +35,3 @@ root.render(
     </Router>
   </React.StrictMode>
 );
-
-reportWebVitals();
